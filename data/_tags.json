@@ -106,5 +106,9 @@
     {
         "name":"Memory",
         "description":"Levels that contain mostly memory based gameplay"
+    },
+    {
+        "name":"Tiny",
+        "description":"Levels that are under 10 seconds"
     }
 ]
