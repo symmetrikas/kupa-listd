@@ -6,6 +6,10 @@
     "verifier": "puufy",
     "verification": "https://youtu.be/4V1xPG3iGcA",
     "percentToQualify": "100",
+    "tags": [
+        "Overall",
+        "Flow"
+    ],
     "records": [
     ]
 }
