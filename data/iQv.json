@@ -5,7 +5,11 @@
     "creators": ["bowm"],
     "verifier": "bowm",
     "verification": "https://youtu.be/0tyl6GQrYrs?si=4y2U7n4mRSEbvC7N",
-    "percentToQualify": "100",
+    "percentToQualify": "100"
+    "tags": [
+        "Wave",
+        "Slow-Paced"
+    ],
     "records": [
         {
             "user": "trubblez2",
