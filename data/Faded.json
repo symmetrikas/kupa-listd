@@ -6,6 +6,10 @@
     "verifier": "Nitro",
     "verification": "https://www.youtube.com/watch?v=PWJujTLjms0",
     "percentToQualify": "100",
+    "tags": [
+        "Ship",
+        "Slow-Paced"
+    ],
     "records": [
     ]
 }
