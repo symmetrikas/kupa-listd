@@ -7,6 +7,10 @@
     "description": "Tuff level that got a deco update two times since the level's release",
     "verification": "https://youtu.be/34rph_amZ5k",
     "percentToQualify": "100",
+    "tags": [
+        "Timings",
+        "Overall"
+    ],
     "records": [
         {
             "user": "blendro",
