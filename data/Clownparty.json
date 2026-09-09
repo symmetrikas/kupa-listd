@@ -5,7 +5,11 @@
     "creators": ["Probro675"],
     "verifier": "Probro675",
     "verification": "https://youtu.be/eFO4fpLLO9E?is=vKPePNOBP4qQ5fii",
-    "percentToQualify": "100",
+    "percentToQualify": "100"
+    "tags": [
+        "Robot",
+        "Clicksync"
+    ],
     "records": [
         {
             "user": "puufy",
