@@ -6,6 +6,10 @@
     "verifier": "tomato",
     "verification": "https://youtu.be/J-DmtS9Np4c",
     "percentToQualify": "100",
+    "tags": [
+        "Timings",
+        "Robot"
+    ],
     "records": [
         {
             "user": "JameSharpener",
