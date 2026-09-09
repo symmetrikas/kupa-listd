@@ -6,6 +6,9 @@
     "verifier": "puffiballGD",
     "verification": "https://youtu.be/0hzTd4JUOVc",
     "percentToQualify": "100",
+    "tags": [
+        "Timings"
+    ],
     "records": [
         {
             "user": "blendro",
