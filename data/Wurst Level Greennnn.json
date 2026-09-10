@@ -6,6 +6,10 @@
     "verifier": "TripleBaconn",
     "verification": "https://youtu.be/JFkTTiCH3JM",
     "percentToQualify": "100",
+    "tags": [
+        "Wave",
+        "Slow-paced"
+    ],
     "records": [
         {
             "user": "rkxlol",
