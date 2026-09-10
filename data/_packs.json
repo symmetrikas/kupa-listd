@@ -63,7 +63,7 @@
     "color": "#5bd3ff",
     "levels": [
       126290644,
-      125824310,
+      128574847,
       126306734
     ]
   },
@@ -72,7 +72,7 @@
     "color": "#5bd3ff",
     "levels": [
       127219273,
-      125856421,
+      144230904,
       126265811
     ]
   },
@@ -143,16 +143,6 @@
     "name": "Wave Progression Tier IV",
     "color": "#5bd3ff",
     "levels": [
-      126746723,
-      129643980,
-      125716623,
-      126048559
-      ]
-    },
-    {
-    "name": "Wave Progression Tier V",
-    "color": "#5bd3ff",
-    "levels": [
       127186824,
       123951901,
       112461175,
@@ -160,17 +150,16 @@
       ]
     },
     {
-    "name": "Wave Progression Tier VI",
+    "name": "Wave Progression Tier V",
     "color": "#5bd3ff",
     "levels": [
       129101235,
       128776280,
-      126116426,
-      129844573
+      126116426
       ]
     },
     {
-    "name": "Wave Progression Tier VII",
+    "name": "Wave Progression Tier VI",
     "color": "#5bd3ff",
     "levels": [
       128579122,
@@ -179,7 +168,7 @@
       ]
       },
         {
-    "name": "Wave Progression Tier VIII",
+    "name": "Wave Progression Tier VII",
     "color": "#5bd3ff",
     "levels": [
       125669787,
@@ -189,17 +178,17 @@
       ]
     },
     {
-    "name": "Wave Progression Tier IX",
+    "name": "Wave Progression Tier VIII",
     "color": "#5bd3ff",
     "levels": [
       126290644,
-      125856421,
+      125669787,
       126403522,
       129568741
       ]
     },
     {
-    "name": "Wave Progression Tier X",
+    "name": "Wave Progression Tier IX",
     "color": "#5bd3ff",
     "levels": [
       128497320,
@@ -207,13 +196,4 @@
       130304400
       ]
     },
-    {
-    "name": "Wave Progression Tier XI",
-    "color": "#5bd3ff",
-    "levels": [
-      130416384,
-      127219273,
-      128719600
-      ]
-    }
 ]
