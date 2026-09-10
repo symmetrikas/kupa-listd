@@ -6,6 +6,10 @@
     "verifier": "baku",
     "verification": "https://youtu.be/dOlVUyCBlL4",
     "percentToQualify": "100",
+    "tags": [
+        "Wave",
+        "Precision"
+    ],
     "records": [
         {
             "user": "JameSharpener",
