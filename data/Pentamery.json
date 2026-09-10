@@ -6,6 +6,10 @@
     "verifier": "tomato",
     "verification": "https://youtu.be/OKQmv9lKxoQ",
     "percentToQualify": "100",
+    "tags": [
+        "Wave",
+        "Slow-Paced"
+    ],
     "records": [
         {
             "user": "JameSharpener",
