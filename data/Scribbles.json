@@ -7,5 +7,11 @@
     "verification": "https://www.youtube.com/watch?v=OpiFV7MmDLE",
     "percentToQualify": "100",
     "records": [
+          {
+            "user": "zPentamery",
+            "link": "https://cdn.discordapp.com/attachments/1547756273141813278/1547756275922632764/okew_ee.mov?ex=6abcf79c&is=6abba61c&hm=d9afe8ea5612c86200be73a60449bcb8025c2c5d4a5ca153db4aaa3b9fecda4b&",
+            "percent": 100,
+            "hz": 240
+        }
     ]
 }
