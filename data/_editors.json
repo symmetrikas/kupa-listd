@@ -1,30 +1,18 @@
 [
     {
         "role": "owner",
-        "name": "Yogurt11",
-        "link": "https://www.youtube.com/@Prometheus_Alt"
+        "name": "Symm.",
+        "link": "https://www.youtube.com/@deniszsm"
     },
-    
     {
-        "role": "dev",
+        "role": "owner",
         "name": "Yogurt11",
         "link": "https://www.youtube.com/@Prometheus_Alt"
     },
-    
     {
         "role": "owner",
         "name": "MayXaX",
         "link": "https://www.youtube.com/@max528XDX"
-    },
-    {
-        "role": "owner",
-        "name": "Symm.",
-        "link": "https://www.youtube.com/@deniszsm"
-    },
-    {
-        "role": "dev",
-        "name": "Symm.",
-        "link": "https://www.youtube.com/@deniszsm"
     },
     {
         "role": "dev",
@@ -33,7 +21,18 @@
     },
     {
         "role": "dev",
-        "name": "rkxlol",
-        "link": "https://www.youtube.com/@max528XDX"
+        "name": "JameSharpener",
+        "link": ""
+    },
+    {
+        "role": "dev",
+        "name": "LukeGammoneese",
+        "link": ""
+    },
+    {
+        "role": "dev",
+        "name": "FJKR",
+        "link": ""
     }
+    
 ]
