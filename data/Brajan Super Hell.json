@@ -11,5 +11,11 @@
         "High CPS"
             ],
     "records": [
+        {
+            "user": "zPentamery",
+            "link": "https://cdn.discordapp.com/attachments/1554660584585429033/1554660585831141458/ggez.mov?backend=b2&ex=6abe5abf&is=6abd093f&hm=2f162de9c4af0e927849b6aa226795dcc5420a2d204d53f2cf3d72a025316ef2&",
+            "percent": 100,
+            "hz": 240
+        }
     ]
 }
