@@ -127,7 +127,6 @@ export default {
         <td class="level">
             <p
                 class="type-label-lg pack-name"
-                :style="{ color: pack.color }"
             >
                 {{ pack.name }}
             </p>
