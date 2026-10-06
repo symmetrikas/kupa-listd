@@ -111,6 +111,29 @@ export default {
                                 </td>
                             </tr>
                         </table>
+                        
+    <h2 v-if="entry.packCompletions && entry.packCompletions.length > 0">
+    Pack Completions ({{ entry.packCompletions.length }})
+</h2>
+
+<table
+    class="table pack-completions"
+    v-if="entry.packCompletions && entry.packCompletions.length > 0"
+>
+    <tr
+        v-for="pack in entry.packCompletions"
+        :key="pack.name"
+    >
+        <td class="level">
+            <p
+                class="type-label-lg pack-name"
+                :style="{ color: pack.color }"
+            >
+                {{ pack.name }}
+            </p>
+        </td>
+    </tr>
+</table>
 
                         <h2 v-if="entry.progressed.length > 0">
                             Progressed ({{entry.progressed.length}})
