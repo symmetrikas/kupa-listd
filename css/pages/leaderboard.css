@@ -152,6 +152,9 @@
     outline: none;
 }
 
+.page-leaderboard .player .pack-completions .pack-name {
+    padding-block: 1rem;
+}
 .flag {
     user-select: none;
     -webkit-user-select: none;
