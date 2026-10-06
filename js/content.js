@@ -71,6 +71,18 @@ export async function fetchEditors() {
 
 export async function fetchLeaderboard() {
     const list = await fetchList();
+  
+      let packs = [];
+
+    try {
+        const packsResult = await fetch(`${dir}/_packs.json`);
+
+        if (packsResult.ok) {
+            packs = await packsResult.json();
+        }
+    } catch (error) {
+        console.error('Failed to load packs for leaderboard completions.', error);
+    }
 
     const scoreMap = {};
     const errs = [];
