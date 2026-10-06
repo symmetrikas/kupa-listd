@@ -70,22 +70,21 @@ export async function fetchEditors() {
 
 
 export async function fetchLeaderboard() {
+export async function fetchLeaderboard() {
     const list = await fetchList();
-  
-      let packs = [];
+
+    let packs = [];
 
     try {
         const packsResult = await fetch(`${dir}/_packs.json`);
-
-        if (packsResult.ok) {
-            packs = await packsResult.json();
-        }
+        packs = await packsResult.json();
     } catch (error) {
-        console.error('Failed to load packs for leaderboard completions.', error);
+        console.error('Failed to load packs:', error);
     }
 
     const scoreMap = {};
     const errs = [];
+
     list.forEach(([level, err], rank) => {
         if (err) {
             errs.push(err);
@@ -96,13 +95,17 @@ export async function fetchLeaderboard() {
         const verifier = Object.keys(scoreMap).find(
             (u) => u.toLowerCase() === level.verifier.toLowerCase(),
         ) || level.verifier;
+
         scoreMap[verifier] ??= {
             verified: [],
             completed: [],
             progressed: [],
         };
+
         const { verified } = scoreMap[verifier];
+
         verified.push({
+            id: level.id,
             rank: rank + 1,
             level: level.name,
             score: score(rank + 1, 100, level.percentToQualify),
@@ -114,69 +117,79 @@ export async function fetchLeaderboard() {
             const user = Object.keys(scoreMap).find(
                 (u) => u.toLowerCase() === record.user.toLowerCase(),
             ) || record.user;
+
             scoreMap[user] ??= {
                 verified: [],
                 completed: [],
                 progressed: [],
             };
+
             const { completed, progressed } = scoreMap[user];
+
             if (record.percent === 100) {
                 completed.push({
+                    id: level.id,
                     rank: rank + 1,
                     level: level.name,
                     score: score(rank + 1, 100, level.percentToQualify),
                     link: record.link,
                 });
+
                 return;
             }
 
             progressed.push({
+                id: level.id,
                 rank: rank + 1,
                 level: level.name,
                 percent: record.percent,
-                score: score(rank + 1, record.percent, level.percentToQualify),
+                score: score(
+                    rank + 1,
+                    record.percent,
+                    level.percentToQualify
+                ),
                 link: record.link,
             });
         });
     });
 
-    // Wrap in extra Object containing the user and total score
-const res = Object.entries(scoreMap).map(([user, scores]) => {
-    const { verified, completed, progressed } = scores;
+    // Create leaderboard entries
+    const res = Object.entries(scoreMap).map(([user, scores]) => {
+        const { verified, completed, progressed } = scores;
 
-    const total = [verified, completed, progressed]
-        .flat()
-        .reduce((prev, cur) => prev + cur.score, 0);
+        const total = [verified, completed, progressed]
+            .flat()
+            .reduce((prev, cur) => prev + cur.score, 0);
 
-    // IDs of every level this player has completed
-    const completedLevelIds = new Set(
-        completed.map((record) => String(record.id))
-    );
+        // IDs of levels completed by this player
+        const completedLevelIds = new Set(
+            completed.map((level) => String(level.id))
+        );
 
-    // A pack is completed only if EVERY level in the pack is completed
-    const packCompletions = packs
-        .filter(
-            (pack) =>
-                Array.isArray(pack.levels) &&
-                pack.levels.length > 0
-        )
-        .filter((pack) =>
-            pack.levels.every((levelId) =>
+        // Check every pack
+        const packCompletions = packs.filter((pack) => {
+            if (!Array.isArray(pack.levels) || pack.levels.length === 0) {
+                return false;
+            }
+
+            return pack.levels.every((levelId) =>
                 completedLevelIds.has(String(levelId))
-            )
-        )
-        .map((pack) => ({
-            name: pack.name,
-            color: pack.color
-        }));
+            );
+        });
 
-    return {
-        user,
-        total: round(total),
-        ...scores,
-        packCompletions,
-    };
-});
+        return {
+            user,
+            total: round(total),
+            ...scores,
+
+            // Packs fully completed by this player
+            packCompletions,
+        };
+    });
+
     // Sort by total score
-    return [res.sort((a, b) => b.total - a.total), errs];
+    return [
+        res.sort((a, b) => b.total - a.total),
+        errs,
+    ];
 }
