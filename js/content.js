@@ -141,19 +141,42 @@ export async function fetchLeaderboard() {
     });
 
     // Wrap in extra Object containing the user and total score
-    const res = Object.entries(scoreMap).map(([user, scores]) => {
-        const { verified, completed, progressed } = scores;
-        const total = [verified, completed, progressed]
-            .flat()
-            .reduce((prev, cur) => prev + cur.score, 0);
+const res = Object.entries(scoreMap).map(([user, scores]) => {
+    const { verified, completed, progressed } = scores;
 
-        return {
-            user,
-            total: round(total),
-            ...scores,
-        };
-    });
+    const total = [verified, completed, progressed]
+        .flat()
+        .reduce((prev, cur) => prev + cur.score, 0);
 
+    // IDs of every level this player has completed
+    const completedLevelIds = new Set(
+        completed.map((record) => String(record.id))
+    );
+
+    // A pack is completed only if EVERY level in the pack is completed
+    const packCompletions = packs
+        .filter(
+            (pack) =>
+                Array.isArray(pack.levels) &&
+                pack.levels.length > 0
+        )
+        .filter((pack) =>
+            pack.levels.every((levelId) =>
+                completedLevelIds.has(String(levelId))
+            )
+        )
+        .map((pack) => ({
+            name: pack.name,
+            color: pack.color
+        }));
+
+    return {
+        user,
+        total: round(total),
+        ...scores,
+        packCompletions,
+    };
+});
     // Sort by total score
     return [res.sort((a, b) => b.total - a.total), errs];
 }
