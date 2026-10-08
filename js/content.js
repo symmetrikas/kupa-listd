@@ -177,14 +177,19 @@ const completedLevelIds = new Set([
             );
         });
 
-        return {
-            user,
-            total: round(total),
-            ...scores,
+// Points awarded for completed packs
+const packPoints = packCompletions.reduce(
+    (total, pack) => total + (Number(pack.points) || 0),
+    0
+);
 
-            // Packs fully completed by this player
-            packCompletions,
-        };
+return {
+    user,
+    total: round(total + packPoints),
+    ...scores,
+    packCompletions,
+    packPoints,
+};
     });
 
     // Sort by total score
