@@ -42,6 +42,12 @@
             "percent": 100,
             "hz": 60,
             "mobile": "true"
+        },
+        {
+            "user": "LukeGammoneese",
+            "link": "https://www.youtube.com/watch?v=xV2Jcx-org4",
+            "percent": 100,
+            "hz": 75 
         }
     ]
 }
