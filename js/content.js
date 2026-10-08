@@ -161,9 +161,10 @@ export async function fetchLeaderboard() {
             .reduce((prev, cur) => prev + cur.score, 0);
 
         // IDs of levels completed by this player
-        const completedLevelIds = new Set(
-            completed.map((level) => String(level.id))
-        );
+const completedLevelIds = new Set([
+    ...completed.map((level) => String(level.id)),
+    ...verified.map((level) => String(level.id)),
+]);
 
         // Check every pack
         const packCompletions = packs.filter((pack) => {
