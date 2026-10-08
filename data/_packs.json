@@ -57,6 +57,7 @@
   {
     "name": "CCC Levels Pack",
     "color": "#5bd3ff",
+    "points": 100,
     "levels": [
       126290644,
       126306734,
@@ -78,6 +79,7 @@
   {
     "name": "TBCL's Favorites Pack I",
     "color": "#5bd3ff",
+    "points": 150,
     "levels": [
       126290644,
       128574847,
