@@ -89,6 +89,7 @@
   {
     "name": "TBCL's Favorites Pack II",
     "color": "#5bd3ff",
+    "points": 250,
     "levels": [
       127219273,
       144230904,
@@ -98,6 +99,7 @@
     {
     "name": "Kanye West Pack",
     "color": "#5bd3ff",
+    "points": 150,
     "levels": [
       128574847,
       126343253,
@@ -108,6 +110,7 @@
   {
     "name": "Tyler, The Creator Pack",
     "color": "#5bd3ff",
+    "points": 50,
     "levels": [
       134571854,
       129091829,
@@ -117,6 +120,7 @@
   {
     "name": "Former Top 1's Pack I",
     "color": "#5bd3ff",
+    "points": 250,
     "levels": [
       127219273,
       127766355,
