@@ -51,6 +51,7 @@ export default {
             .sort((a, b) => b.points - a.points),
     }));
   },
+  },
   async mounted() {
     const list = await fetchList();
     const packsData = await fetch("/data/_packs.json").then((res) => res.json());
