@@ -29,27 +29,6 @@ export default {
         );
       };
     },
-    packsByTier() {
-    const tiers = [
-        { name: "Iron Tier", min: 50, color: "#b8b8b8" },
-        { name: "Gold Tier", min: 75, color: "#e0b52b" },
-        { name: "Ruby Tier", min: 100, color: "#ed4055" },
-        { name: "Sapphire Tier", min: 150, color: "#3987e8" },
-        { name: "Diamond Tier", min: 250, color: "#55d9ed" },
-    ];
-
-    return tiers.map((tier, index) => ({
-        ...tier,
-        packs: this.packs
-            .filter(pack => {
-                const points = Number(pack.points) || 0;
-                const nextTier = tiers[index + 1];
-
-                return points >= tier.min &&
-                    (!nextTier || points < nextTier.min);
-            })
-            .sort((a, b) => b.points - a.points),
-    }));
   },
   async mounted() {
     const list = await fetchList();
