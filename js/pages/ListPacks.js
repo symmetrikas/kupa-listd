@@ -69,16 +69,33 @@ export default {
     </main>
     <main v-else class="page-list-packs">
       <!-- Pack selector -->
-      <div class="pack-selector">
-        <button
-          v-for="(pack, index) in packs"
-          :key="pack.id"
-          :class="{ active: index === selectedPackIndex }"
-          @click="selectedPackIndex = index; selectedLevelIndex = 0"
-          :style="{ '--color-background': pack.color }"
+ <div class="pack-tiers">
+        <section
+          v-for="tier in packsByTier"
+          :key="tier.name"
+          class="pack-tier"
+          v-if="tier.packs.length"
         >
-          {{ pack.name }}
-        </button>
+          <h2
+            class="pack-tier-title"
+            :style="{ backgroundColor: tier.color }"
+          >
+            {{ tier.name }}
+          </h2>
+
+          <button
+            v-for="pack in tier.packs"
+            :key="pack.name"
+            class="pack-item"
+            @click="
+              selectedPackIndex = packs.indexOf(pack);
+              selectedLevelIndex = 0
+            "
+          >
+            <span>{{ pack.name }}</span>
+            <span>{{ pack.points }} points</span>
+          </button>
+        </section>
       </div>
 
       <div class="list-container">
