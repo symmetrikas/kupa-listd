@@ -37,6 +37,12 @@
             "percent": 100,
             "hz": 60,
             "mobile": "true"
+        },
+        {
+            "user": "FJKR",
+            "link": "https://youtu.be/ggn3XsrwU4Y",
+            "percent": 100,
+            "hz": "CBF"
         }
     ]
 }
