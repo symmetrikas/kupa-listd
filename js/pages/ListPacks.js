@@ -90,35 +90,31 @@ export default {
     </main>
     <main v-else class="page-list-packs">
       <!-- Pack selector -->
- <div class="pack-tiers">
-        <section
-          v-for="tier in packsByTier"
-          :key="tier.name"
-          class="pack-tier"
-          v-if="tier.packs.length"
-        >
-          <h2
-            class="pack-tier-title"
-            :style="{ backgroundColor: tier.color }"
-          >
-            {{ tier.name }}
-          </h2>
+<div class="pack-tiers">
+  <template v-for="tier in packsByTier" :key="tier.name">
+    <section v-if="tier.packs.length" class="pack-tier">
+      <h2
+        class="pack-tier-title"
+        :style="{ backgroundColor: tier.color }"
+      >
+        {{ tier.name }}
+      </h2>
 
-          <button
-            v-for="pack in tier.packs"
-            :key="pack.name"
-            class="pack-item"
-            @click="
-              selectedPackIndex = packs.indexOf(pack);
-              selectedLevelIndex = 0
-            "
-          >
-            <span>{{ pack.name }}</span>
-            <span>{{ pack.points }} points</span>
-          </button>
-        </section>
-      </div>
-
+      <button
+        v-for="pack in tier.packs"
+        :key="pack.id || pack.name"
+        class="pack-item"
+        @click="
+          selectedPackIndex = packs.indexOf(pack);
+          selectedLevelIndex = 0
+        "
+      >
+        <span>{{ pack.name }}</span>
+        <span>{{ pack.points }} points</span>
+      </button>
+    </section>
+  </template>
+</div>
       <div class="list-container">
         <!-- Level list in the selected pack -->
         <table class="list" v-if="selectedPack">
