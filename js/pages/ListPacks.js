@@ -53,12 +53,33 @@ export default {
   },
   },
   async mounted() {
-    const list = await fetchList();
-    const packsData = await fetch("/data/_packs.json").then((res) => res.json());
+    try {
+      const list = await fetchList();
 
-    this.list = list;
-    this.packs = packsData;
-    this.loading = false;
+      const response = await fetch("/data/_packs.json");
+
+      if (!response.ok) {
+        throw new Error(
+          `Could not load _packs.json: HTTP ${response.status}`
+        );
+      }
+
+      const packsData = await response.json();
+
+      if (!Array.isArray(packsData)) {
+        throw new Error("_packs.json must contain an array of packs");
+      }
+
+      this.list = list;
+      this.packs = packsData;
+
+      console.log("Packs loaded:", this.packs);
+      console.log("Packs by tier:", this.packsByTier);
+    } catch (error) {
+      console.error("Error loading packs page:", error);
+    } finally {
+      this.loading = false;
+    }
   },
   methods: {
     embed,
