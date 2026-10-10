@@ -31,6 +31,7 @@ export default {
     },
     packsByTier() {
     const tiers = [
+        { name: "Copper Tier", min: 25, color: "#c44704" },
         { name: "Iron Tier", min: 50, color: "#b8b8b8" },
         { name: "Gold Tier", min: 75, color: "#e0b52b" },
         { name: "Ruby Tier", min: 100, color: "#ed4055" },
