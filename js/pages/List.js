@@ -185,7 +185,7 @@ computed: {
           <p v-if="selectedIndexInFullList <= 75">
             <strong>{{ selectedLevel.percentToQualify }}%</strong> or better to qualify
           </p>
-          <p v-else-if="selectedIndexInFullList <= 150">
+          <p v-else-if="selectedIndexInFullList <= 300">
             <strong>100%</strong> or better to qualify
           </p>
           <p v-else>This level does not accept new records.</p>
